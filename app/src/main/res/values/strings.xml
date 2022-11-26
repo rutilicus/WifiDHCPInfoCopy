@@ -12,10 +12,14 @@
 
     <string name="ssid">SSID</string>
     <string name="ip_setting">IP settings</string>
+    <string name="ip_address">IP Address</string>
     <string name="gateway">Gateway</string>
     <string name="network_prefix_length">Network Prefix Length</string>
     <string name="dns_1">DNS 1</string>
     <string name="dns_2">DNS 2</string>
     <string name="config_dhcp">DHCP</string>
     <string name="config_static">STATIC</string>
+    <string name="setting_notice">If you change DHCP to static, set to DHCP before disconnect network.</string>
+    <string name="set_dhcp">Set to DHCP</string>
+    <string name="set_dns_server_static">Set DNS Server and static</string>
 </resources>

@@ -8,55 +8,54 @@
         tools:context=".FirstFragment">
 
     <TableLayout
+            android:id="@+id/table_wifi_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
         <TableRow>
-            <TextView android:text="@string/ssid"/>
-            <TextView android:id="@+id/textview_ssid"/>
+            <TextView android:text="@string/ssid" android:layout_margin="10dp"/>
+            <TextView android:id="@+id/textview_ssid" android:layout_margin="10dp"/>
         </TableRow>
         <TableRow>
-            <TextView android:text="@string/ip_setting"/>
-            <TextView android:id="@+id/textview_ip_setting"/>
+            <TextView android:text="@string/ip_setting" android:layout_margin="10dp"/>
+            <TextView android:id="@+id/textview_ip_setting" android:layout_margin="10dp"/>
         </TableRow>
         <TableRow>
-            <TextView android:text="@string/gateway"/>
-            <TextView android:id="@+id/textview_gateway"/>
+            <TextView android:text="@string/ip_address" android:layout_margin="10dp"/>
+            <TextView android:id="@+id/textview_ip_address" android:layout_margin="10dp"/>
         </TableRow>
         <TableRow>
-            <TextView android:text="@string/network_prefix_length"/>
-            <TextView android:id="@+id/textview_network_prefix_length"/>
+            <TextView android:text="@string/gateway" android:layout_margin="10dp"/>
+            <TextView android:id="@+id/textview_gateway" android:layout_margin="10dp"/>
         </TableRow>
         <TableRow>
-            <TextView android:text="@string/dns_1"/>
-            <TextView android:id="@+id/textview_dns_1"/>
+            <TextView android:text="@string/network_prefix_length" android:layout_margin="10dp"/>
+            <TextView android:id="@+id/textview_network_prefix_length" android:layout_margin="10dp"/>
         </TableRow>
         <TableRow>
-            <TextView android:text="@string/dns_2"/>
-            <TextView android:id="@+id/textview_dns_2"/>
+            <TextView android:text="@string/dns_1" android:layout_margin="10dp"/>
+            <TextView android:id="@+id/textview_dns_1" android:layout_margin="10dp"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:text="@string/dns_2" android:layout_margin="10dp"/>
+            <TextView android:id="@+id/textview_dns_2" android:layout_margin="10dp"/>
         </TableRow>
     </TableLayout>
-    <TextView
-            android:id="@+id/textview_first"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/hello_first_fragment"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/button_first"
-    />
-
     <Button
-            android:id="@+id/button_first"
+            android:id="@+id/button_setting_change"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/table_wifi_info"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+    </Button>
+    <TextView
+            android:text="@string/setting_notice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/next"
-            app:layout_constraintTop_toBottomOf="@id/textview_first"
+            app:layout_constraintTop_toBottomOf="@id/button_setting_change"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-    />
+            app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
