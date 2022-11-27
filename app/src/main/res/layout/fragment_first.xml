@@ -1,61 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".FirstFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="model" type="com.rutilicus.wifi_dhcp_info_copy.WifiSettingsViewModel"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".FirstFragment">
 
-    <TableLayout
-            android:id="@+id/table_wifi_info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-        <TableRow>
-            <TextView android:text="@string/ssid" android:layout_margin="10dp"/>
-            <TextView android:id="@+id/textview_ssid" android:layout_margin="10dp"/>
-        </TableRow>
-        <TableRow>
-            <TextView android:text="@string/ip_setting" android:layout_margin="10dp"/>
-            <TextView android:id="@+id/textview_ip_setting" android:layout_margin="10dp"/>
-        </TableRow>
-        <TableRow>
-            <TextView android:text="@string/ip_address" android:layout_margin="10dp"/>
-            <TextView android:id="@+id/textview_ip_address" android:layout_margin="10dp"/>
-        </TableRow>
-        <TableRow>
-            <TextView android:text="@string/gateway" android:layout_margin="10dp"/>
-            <TextView android:id="@+id/textview_gateway" android:layout_margin="10dp"/>
-        </TableRow>
-        <TableRow>
-            <TextView android:text="@string/network_prefix_length" android:layout_margin="10dp"/>
-            <TextView android:id="@+id/textview_network_prefix_length" android:layout_margin="10dp"/>
-        </TableRow>
-        <TableRow>
-            <TextView android:text="@string/dns_1" android:layout_margin="10dp"/>
-            <TextView android:id="@+id/textview_dns_1" android:layout_margin="10dp"/>
-        </TableRow>
-        <TableRow>
-            <TextView android:text="@string/dns_2" android:layout_margin="10dp"/>
-            <TextView android:id="@+id/textview_dns_2" android:layout_margin="10dp"/>
-        </TableRow>
-    </TableLayout>
-    <Button
-            android:id="@+id/button_setting_change"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/table_wifi_info"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-    </Button>
-    <TextView
-            android:text="@string/setting_notice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/button_setting_change"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TableLayout
+                android:id="@+id/table_wifi_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+            <TableRow>
+                <TextView android:text="@string/ssid" android:layout_margin="10dp"/>
+                <TextView android:text="@{model.ssid}" android:layout_margin="10dp"/>
+                <Button
+                        android:id="@+id/button_ssid_copy"
+                        android:text="@string/copy"
+                        android:visibility="@{model.ssidButtonVisible}"
+                        android:onClick="@{() -> model.copyClipboard(model.ssid)}"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:text="@string/ip_setting" android:layout_margin="10dp"/>
+                <TextView android:text="@{model.ipSetting}" android:layout_margin="10dp"/>
+                <Button
+                        android:id="@+id/button_ip_setting_copy"
+                        android:text="@string/copy"
+                        android:visibility="@{model.ipSettingButtonVisible}"
+                        android:onClick="@{() -> model.copyClipboard(model.ipSetting)}"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:text="@string/ip_address" android:layout_margin="10dp"/>
+                <TextView android:text="@{model.ipAddress}" android:layout_margin="10dp"/>
+                <Button
+                        android:id="@+id/button_ip_address_copy"
+                        android:text="@string/copy"
+                        android:visibility="@{model.ipAddressButtonVisible}"
+                        android:onClick="@{() -> model.copyClipboard(model.ipAddress)}"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:text="@string/gateway" android:layout_margin="10dp"/>
+                <TextView android:text="@{model.gateway}" android:layout_margin="10dp"/>
+                <Button
+                        android:id="@+id/button_gateway_copy"
+                        android:text="@string/copy"
+                        android:visibility="@{model.gatewayButtonVisible}"
+                        android:onClick="@{() -> model.copyClipboard(model.gateway)}"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:text="@string/network_prefix_length" android:layout_margin="10dp"/>
+                <TextView android:text="@{model.networkPrefixLength}" android:layout_margin="10dp"/>
+                <Button
+                        android:id="@+id/button_network_prefix_copy"
+                        android:text="@string/copy"
+                        android:visibility="@{model.networkPrefixLengthButtonVisible}"
+                        android:onClick="@{() -> model.copyClipboard(model.networkPrefixLength)}"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:text="@string/dns_1" android:layout_margin="10dp"/>
+                <TextView android:text="@{model.dns1}" android:layout_margin="10dp"/>
+                <Button
+                        android:id="@+id/button_dns_1_copy"
+                        android:text="@string/copy"
+                        android:visibility="@{model.dns1ButtonVisible}"
+                        android:onClick="@{() -> model.copyClipboard(model.dns1)}"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:text="@string/dns_2" android:layout_margin="10dp"/>
+                <TextView android:text="@{model.dns2}" android:layout_margin="10dp"/>
+                <Button
+                        android:id="@+id/button_dns_2_copy"
+                        android:text="@string/copy"
+                        android:visibility="@{model.dns2ButtonVisible}"
+                        android:onClick="@{() -> model.copyClipboard(model.dns2)}"/>
+            </TableRow>
+        </TableLayout>
+        <Button
+                android:id="@+id/button_copy_all"
+                android:text="@string/copy_all"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:visibility="@{model.copyAllButtonVisible}"
+                android:onClick="@{() -> model.copyAllClipboard()}"
+                app:layout_constraintTop_toBottomOf="@+id/table_wifi_info"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+        </Button>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

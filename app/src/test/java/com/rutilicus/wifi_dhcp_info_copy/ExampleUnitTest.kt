@@ -1,4 +1,4 @@
-package com.example.wifi_dhcp_dns_changer
+package com.rutilicus.wifi_dhcp_info_copy
 
 import org.junit.Test
 

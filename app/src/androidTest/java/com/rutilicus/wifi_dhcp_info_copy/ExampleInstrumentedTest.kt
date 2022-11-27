@@ -1,4 +1,4 @@
-package com.example.wifi_dhcp_dns_changer
+package com.rutilicus.wifi_dhcp_info_copy
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.example.wifi_dhcp_dns_changer", appContext.packageName)
+        assertEquals("com.example.wifi_dhcp_info_copy", appContext.packageName)
     }
 }

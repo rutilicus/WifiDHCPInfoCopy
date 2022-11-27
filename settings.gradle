@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Wifi DHCP DNS Changer"
+rootProject.name = "Wifi DHCP Info Copy"
 include ':app'

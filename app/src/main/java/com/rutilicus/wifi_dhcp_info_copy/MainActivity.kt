@@ -1,4 +1,4 @@
-package com.example.wifi_dhcp_dns_changer
+package com.rutilicus.wifi_dhcp_info_copy
 
 import android.Manifest.permission.ACCESS_FINE_LOCATION
 import android.content.pm.PackageManager
@@ -10,7 +10,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
-import com.example.wifi_dhcp_dns_changer.databinding.ActivityMainBinding
+import com.rutilicus.wifi_dhcp_info_copy.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     companion object {

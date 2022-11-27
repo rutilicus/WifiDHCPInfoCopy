@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Wifi DHCP DNS Changer</string>
+    <string name="app_name">Wifi DHCP Info Copy</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -19,7 +19,6 @@
     <string name="dns_2">DNS 2</string>
     <string name="config_dhcp">DHCP</string>
     <string name="config_static">STATIC</string>
-    <string name="setting_notice">If you change DHCP to static, set to DHCP before disconnect network.</string>
-    <string name="set_dhcp">Set to DHCP</string>
-    <string name="set_dns_server_static">Set DNS Server and static</string>
+    <string name="copy_all">Copy All</string>
+    <string name="copy">Copy</string>
 </resources>
